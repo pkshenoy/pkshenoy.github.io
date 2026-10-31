@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f2e8">
+<title>Wisefool (Kay Yes) — Retired, Rewired &amp; Absurdly Inspired</title>
+<meta name="description" content="A satirical spin on life's nonsense. Field notes on the bureaucracy of bananas, emotional weather reports, and the existential crisis of a missing sock.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f8f2e8;
+    --paper-deep: #f0e8d8;
+    --ink: #1a1b16;
+    --ink-soft: #2c2d26;
+    --muted: #65665c;
+    --muted-soft: #84857a;
+    --line: #e6dfd0;
+    --line-strong: #d6ceb8;
+    --lavender: #e4daf8;
+    --lavender-deep: #5a4580;
+    --lavender-mid: #9b82c4;
+    --coral: #f0a28c;
+    --coral-deep: #d46a4e;
+    --sage: #d4e8cc;
+    --sage-deep: #6a9a5e;
+    --peach: #fce8d8;
+    --sky: #d8eaf5;
+    --cream: #fffdf9;
+    --white: #ffffff;
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", "Avenir Next", system-ui, sans-serif;
+    --shadow-sm: 0 4px 16px -6px rgba(28, 29, 24, .12);
+    --shadow: 0 18px 40px -22px rgba(28, 29, 24, .28);
+    --shadow-lg: 0 28px 56px -28px rgba(28, 29, 24, .32);
+    --radius: 22px;
+    --radius-lg: 32px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--coral);
+    color: var(--ink);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img, svg { display: block; max-width: 100%; }
+
+  .shell {
+    width: min(1120px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .skip {
+    position: absolute;
+    left: 16px;
+    top: -80px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: top .2s ease;
+    z-index: 100;
+  }
+  .skip:focus { top: 16px; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(246, 241, 231, .85);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border-bottom: 1px solid rgba(228, 223, 211, .7);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 0;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .brand .mark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 14px;
+    line-height: 1;
+    transition: transform .4s cubic-bezier(.34, 1.4, .64, 1), background .25s ease;
+  }
+  .brand:hover .mark {
+    transform: rotate(90deg);
+    background: var(--lavender-deep);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-links a {
+    position: relative;
+    padding: 6px 0;
+    transition: color .2s ease;
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.5px;
+    background: var(--lavender-deep);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s cubic-bezier(.22, 1, .36, 1);
+  }
+  .nav-links a:hover {
+    color: var(--ink);
+  }
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* ---------- Shared ---------- */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--lavender-deep);
+  }
+  .eyebrow::before {
+    content: "✳";
+    font-size: 13px;
+    letter-spacing: 0;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+  }
+
+  .section {
+    padding-block: clamp(72px, 9vw, 120px);
+    scroll-margin-top: 88px;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: clamp(36px, 5vw, 52px);
+  }
+  .section-head h2 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -.04em;
+    margin-top: 14px;
+  }
+  .section-head p {
+    max-width: 320px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: clamp(40px, 7vw, 80px);
+    align-items: center;
+    padding-block: clamp(56px, 8vw, 100px) clamp(64px, 8vw, 110px);
+  }
+
+  h1 {
+    font-size: clamp(48px, 7.2vw, 96px);
+    line-height: .94;
+    letter-spacing: -.05em;
+    margin: 20px 0 24px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--lavender-deep);
+  }
+
+  .lead {
+    max-width: 48ch;
+    margin: 0 0 36px;
+    color: var(--muted);
+    font-size: clamp(16px, 1.7vw, 18.5px);
+    line-height: 1.7;
+  }
+  .lead strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 26px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    transition: transform .25s cubic-bezier(.34, 1.4, .64, 1), background .25s ease, box-shadow .25s ease;
+    box-shadow: 0 8px 24px -10px rgba(28, 29, 24, .4);
+  }
+  .button:hover {
+    background: var(--lavender-deep);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px -12px rgba(90, 69, 128, .5);
+  }
+  .button:focus-visible {
+    outline: 2px solid var(--lavender-deep);
+    outline-offset: 3px;
+  }
+
+  .text-link {
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--line-strong);
+    padding-bottom: 4px;
+    transition: border-color .2s ease, color .2s ease;
+  }
+  .text-link:hover {
+    color: var(--lavender-deep);
+    border-color: var(--lavender-deep);
+  }
+
+  .art {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(155deg, #e4daf8 0%, #f0c8b8 45%, #d4e8cc 100%);
+    border-radius: 48% 48% 46% 46% / 44% 44% 48% 48%;
+    box-shadow:
+      inset 0 0 0 1px rgba(90, 69, 128, .15),
+      0 30px 60px -28px rgba(90, 69, 128, .38);
+    max-width: 460px;
+    margin-inline: auto;
+    width: 100%;
+    transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+  }
+  .art:hover {
+    transform: scale(1.02) rotate(-1deg);
+  }
+  .art svg {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker {
+    background: var(--ink);
+    color: #ebe7dc;
+    border-block: 1px solid var(--ink);
+    padding: 16px 0;
+    overflow: hidden;
+  }
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 48s linear infinite;
+  }
+  .ticker:hover .ticker-track {
+    animation-play-state: paused;
+  }
+
+  .ticker ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+  .ticker li {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-right: 28px;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #d4d0c4;
+  }
+  .ticker li::after {
+    content: "✳";
+    color: var(--coral);
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+
+  /* ---------- Origin ---------- */
+  .origin {
+    display: grid;
+    grid-template-columns: .78fr 1.22fr;
+    gap: clamp(36px, 6vw, 72px);
+    align-items: start;
+  }
+
+  .origin-aside {
+    position: sticky;
+    top: 100px;
+  }
+
+  .file-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--cream);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .file-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  .file-card .file-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted-soft);
+    margin-bottom: 8px;
+  }
+  .file-card .file-name {
+    font-family: var(--serif);
+    font-size: 28px;
+    letter-spacing: -.03em;
+    margin-bottom: 22px;
+  }
+  .file-rows {
+    border-top: 1px solid var(--line);
+  }
+  .file-rows > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .file-rows dt {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .file-rows dd {
+    text-align: right;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+
+  .origin-body p {
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 16.5px;
+    line-height: 1.75;
+  }
+  .origin-body p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .pull {
+    margin-top: 36px;
+    padding: 28px 0 28px 26px;
+    border-left: 3px solid var(--coral-deep);
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.8vw, 30px);
+    line-height: 1.3;
+    letter-spacing: -.02em;
+    color: var(--ink);
+    background: linear-gradient(90deg, rgba(240, 162, 140, .14), transparent);
+  }
+
+  /* ---------- Field Notes ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    min-height: 248px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--cream);
+    transition: transform .3s cubic-bezier(.22, 1, .36, 1), box-shadow .3s ease, border-color .3s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: #cfc8b8;
+  }
+  .card:nth-child(2),
+  .card:nth-child(5) {
+    background: var(--sage);
+    border-color: transparent;
+  }
+  .card:nth-child(3),
+  .card:nth-child(6) {
+    background: var(--peach);
+    border-color: transparent;
+  }
+  .card:nth-child(4) {
+    background: var(--sky);
+    border-color: transparent;
+  }
+
+  .card .tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .card .tag .glyph {
+    color: var(--coral-deep);
+    font-size: 15px;
+    letter-spacing: 0;
+  }
+
+  .card h3 {
+    margin: auto 0 12px;
+    padding-top: 26px;
+    font-size: 24px;
+    line-height: 1.18;
+    letter-spacing: -.025em;
+  }
+  .card p {
+    font-size: 14.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ---------- Manifesto ---------- */
+  .manifesto {
+    display: grid;
+    grid-template-columns: .75fr 1.25fr;
+    gap: clamp(36px, 6vw, 72px);
+    align-items: start;
+  }
+  .manifesto-intro {
+    position: sticky;
+    top: 100px;
+  }
+  .manifesto-intro h2 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -.04em;
+    margin: 14px 0 16px;
+  }
+  .manifesto-intro p {
+    max-width: 290px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .principles {
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+  .principle {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 20px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding-left .3s cubic-bezier(.22, 1, .36, 1), background .25s ease;
+  }
+  .principle:hover {
+    padding-left: 10px;
+  }
+  .principle .num {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--lavender-deep);
+    padding-top: 2px;
+  }
+  .principle h3 {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -.01em;
+  }
+  .principle p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ---------- Quote Band ---------- */
+  .quote-band {
+    background: var(--ink);
+    color: var(--cream);
+    padding-block: clamp(64px, 9vw, 108px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 15% 35%, rgba(90, 69, 128, .35), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 85% 70%, rgba(212, 106, 78, .22), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 50% 90%, rgba(106, 154, 94, .15), transparent 50%);
+    pointer-events: none;
+  }
+  .quote-band blockquote {
+    position: relative;
+    margin: 0 auto;
+    max-width: 780px;
+    font-family: var(--serif);
+    font-size: clamp(26px, 4vw, 44px);
+    line-height: 1.28;
+    letter-spacing: -.025em;
+  }
+  .quote-band em {
+    font-style: italic;
+    color: #d4c4ef;
+  }
+  .quote-band cite {
+    display: block;
+    margin-top: 28px;
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #a8a59a;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-panel {
+    display: grid;
+    grid-template-columns: 1.35fr auto;
+    gap: 40px;
+    align-items: center;
+    background: linear-gradient(145deg, #e4daf8 0%, #f0c8b8 55%, #d4e8cc 100%);
+    border-radius: var(--radius-lg);
+    padding: clamp(36px, 5.5vw, 64px);
+    box-shadow: var(--shadow-sm);
+  }
+  .cta-panel h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -.035em;
+    margin: 14px 0 12px;
+    max-width: 18ch;
+  }
+  .cta-panel p {
+    color: var(--lavender-deep);
+    font-size: 15.5px;
+  }
+  .cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 32px 0 48px;
+    border-top: 1px solid var(--line);
+    margin-top: clamp(64px, 8vw, 96px);
+    color: var(--muted);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  footer span:last-child {
+    color: var(--lavender-deep);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .art {
+      max-width: 380px;
+      order: -1;
+    }
+    .origin,
+    .manifesto {
+      grid-template-columns: 1fr;
+    }
+    .origin-aside,
+    .manifesto-intro {
+      position: static;
+    }
+    .cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .shell {
+      width: calc(100% - 36px);
+    }
+    .section-head {
+      display: block;
+    }
+    .section-head p {
+      margin-top: 18px;
+      max-width: none;
+    }
+    .cta-panel {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .nav-links {
+      gap: 18px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nav {
+      font-size: 11px;
+    }
+    .nav-links {
+      gap: 14px;
+      font-size: 10.5px;
+    }
+    .brand .mark {
+      width: 26px;
+      height: 26px;
+      font-size: 12px;
+    }
+    .cards {
+      grid-template-columns: 1fr;
+    }
+    .card {
+      min-height: 200px;
+    }
+    footer {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+    .hero {
+      padding-block: 40px 60px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .ticker { overflow-x: auto; }
+    .ticker-track { animation: none; }
+    .button:hover,
+    .card:hover,
+    .principle:hover,
+    .brand:hover .mark,
+    .art:hover,
+    .file-card:hover {
+      transform: none;
+    }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top">
+          <span class="mark" aria-hidden="true">✳</span>
+          Wisefool <span style="font-weight:500;opacity:.7;letter-spacing:.04em">(Kay Yes)</span>
+        </a>
+        <div class="nav-links">
+          <a href="#origin">The Origin</a>
+          <a href="#field-notes">Field Notes</a>
+          <a href="#manifesto">Manifesto</a>
+          <a href="#hello">Say Hello</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="top"></div>
+
+    <!-- HERO -->
+    <section class="shell hero">
+      <div>
+        <div class="eyebrow">Retired · Rewired · Ridiculous</div>
+        <h1>Retired. Rewired.<br><em>Absurdly inspired.</em></h1>
+        <p class="lead">
+          A satirical spin on life's nonsense. After decades of nodding solemnly at
+          seriousness, I've traded my briefcase for a quill dipped in delicious
+          absurdity — and I am <strong>not putting it down anytime soon.</strong>
+        </p>
+        <div class="actions">
+          <a class="button" href="#origin">Meet the jester <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#field-notes">Read the field notes</a>
+        </div>
+      </div>
+
+      <div class="art">
+        <svg viewBox="0 0 420 440" role="img" aria-labelledby="artTitle">
+          <title id="artTitle">An illustrated jester in a three-pointed cap, grinning beneath a crescent moon and a scatter of stars.</title>
+
+          <!-- orbits -->
+          <circle cx="210" cy="215" r="168" fill="none" stroke="#5c4f7a" stroke-opacity=".18" stroke-width="1.5" stroke-dasharray="2 10"/>
+          <circle cx="210" cy="215" r="196" fill="none" stroke="#5c4f7a" stroke-opacity=".09"/>
+
+          <!-- moon -->
+          <circle cx="326" cy="92" r="42" fill="#f7d9b7"/>
+          <circle cx="308" cy="78" r="40" fill="#e8e1f4"/>
+
+          <!-- stars & punctuation -->
+          <text x="92" y="128" font-size="26" fill="#5c4f7a" opacity=".6">✳</text>
+          <text x="330" y="288" font-size="20" fill="#5c4f7a" opacity=".5">✦</text>
+          <text x="72" y="330" font-size="17" fill="#5c4f7a" opacity=".4">✦</text>
+          <text x="78" y="392" font-family="Instrument Serif, Georgia, serif" font-size="46" fill="#5c4f7a" opacity=".28">?</text>
+          <text x="330" y="386" font-family="Instrument Serif, Georgia, serif" font-size="32" fill="#5c4f7a" opacity=".25">!</text>
+
+          <!-- ground shadow -->
+          <ellipse cx="210" cy="392" rx="88" ry="10" fill="#5c4f7a" opacity=".1"/>
+
+          <!-- body -->
+          <path d="M152 304 q58 -14 116 0 l10 66 q-68 18 -136 0 Z"
+                fill="#a8bf9f" stroke="#1c1d18" stroke-width="3" stroke-linejoin="round"/>
+
+          <!-- collar -->
+          <path d="M162 290 q48 30 96 0 q-8 32 -48 32 q-40 0 -48 -32 Z"
+                fill="#fffdf8" stroke="#1c1d18" stroke-width="3" stroke-linejoin="round"/>
+
+          <!-- hat prongs -->
+          <path d="M168 200 C142 172 110 138 86 96 C124 108 160 146 196 178 Z"
+                fill="#e9a48f" stroke="#1c1d18" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M190 186 C190 140 196 100 210 62 C226 100 232 140 232 186 Z"
+                fill="#a8bf9f" stroke="#1c1d18" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M252 200 C278 172 310 138 334 96 C296 108 260 146 224 178 Z"
+                fill="#e9a48f" stroke="#1c1d18" stroke-width="3" stroke-linejoin="round"/>
+
+          <!-- head -->
+          <ellipse cx="210" cy="228" rx="60" ry="64" fill="#f3cbaa" stroke="#1c1d18" stroke-width="3"/>
+
+          <!-- face -->
+          <path d="M178 208 q10 -8 20 -2" fill="none" stroke="#1c1d18" stroke-width="3" stroke-linecap="round"/>
+          <path d="M222 206 q10 -6 20 2" fill="none" stroke="#1c1d18" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="188" cy="222" rx="5" ry="6.5" fill="#1c1d18"/>
+          <ellipse cx="232" cy="222" rx="5" ry="6.5" fill="#1c1d18"/>
+          <ellipse cx="172" cy="244" rx="12" ry="7" fill="#e9a48f" opacity=".7"/>
+          <ellipse cx="248" cy="244" rx="12" ry="7" fill="#e9a48f" opacity=".7"/>
+          <path d="M192 250 q18 20 36 0" fill="none" stroke="#1c1d18" stroke-width="3.5" stroke-linecap="round"/>
+
+          <!-- bells -->
+          <g stroke="#1c1d18" stroke-width="3">
+            <circle cx="86" cy="96" r="9" fill="#f7d9b7"/>
+            <circle cx="210" cy="62" r="9" fill="#f7d9b7"/>
+            <circle cx="334" cy="96" r="9" fill="#f7d9b7"/>
+          </g>
+
+          <text x="210" y="424" text-anchor="middle"
+                font-family="DM Sans, Avenir, system-ui, sans-serif" font-size="10.5"
+                letter-spacing="3.4" fill="#5c4f7a" opacity=".75">QUESTION EVERYTHING · KINDLY</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-label="Topics currently under investigation">
+      <div class="ticker-track">
+        <ul>
+          <li>The bureaucracy of bananas</li>
+          <li>Emotional weather reports</li>
+          <li>The existential crisis of a missing sock</li>
+          <li>Quantum grocery lists</li>
+          <li>Meetings that could have been naps</li>
+          <li>The tyranny of small talk</li>
+          <li>Unsolicited enlightenment</li>
+          <li>Certificates for existing</li>
+        </ul>
+        <ul aria-hidden="true">
+          <li>The bureaucracy of bananas</li>
+          <li>Emotional weather reports</li>
+          <li>The existential crisis of a missing sock</li>
+          <li>Quantum grocery lists</li>
+          <li>Meetings that could have been naps</li>
+          <li>The tyranny of small talk</li>
+          <li>Unsolicited enlightenment</li>
+          <li>Certificates for existing</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ORIGIN -->
+    <section class="shell section" id="origin">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">The origin story</div>
+          <h2>Serious curiosity.<br>Un-serious packaging.</h2>
+        </div>
+        <p>Part philosopher, part satirist, part professional question-mark generator. Currently unsupervised and heavily caffeinated.</p>
+      </div>
+
+      <div class="origin">
+        <aside class="origin-aside">
+          <div class="file-card">
+            <p class="file-label">Field ID · No. 001</p>
+            <p class="file-name">Wisefool <span style="font-size:0.62em;font-family:var(--sans);letter-spacing:.03em;color:var(--muted);font-weight:500">(Kay Yes)</span></p>
+            <dl class="file-rows">
+              <div><dt>Status</dt><dd>Retired, rewired, mildly caffeinated</dd></div>
+              <div><dt>Weapon</dt><dd>A quill dipped in absurdity</dd></div>
+              <div><dt>Suspect</dt><dd>The existential crisis of a sock</dd></div>
+              <div><dt>Accepting</dt><dd>Coffee. Questions. Punchlines.</dd></div>
+              <div><dt>Not accepting</dt><dd>Meetings</dd></div>
+            </dl>
+          </div>
+        </aside>
+
+        <div class="origin-body">
+          <p>
+            After decades of nodding solemnly at seriousness and pretending the world
+            actually makes sense, I've finally traded my briefcase for a quill dipped in
+            delicious absurdity. Retirement didn't silence my mind — <strong>it unleashed
+            the inner jester</strong> who'd been itching to laugh at the spectacular circus
+            we call reality.
+          </p>
+          <p>
+            Now, with no boss but my caffeine cravings, I dive headfirst into the tangled
+            spaghetti of human behavior, unmasking the ironies, hypocrisies, and glorious
+            contradictions we all awkwardly tiptoe around. No absurdity is safe from my pen.
+          </p>
+          <p>
+            My writing is a playground where wit and wisdom collide, logic does somersaults,
+            seriousness gets a well-deserved timeout, and satire reigns supreme — like a
+            clown wearing a crown. Whether it's the bureaucracy of bananas, emotional weather
+            reports, or the existential crisis of a sock missing its partner, there's always
+            something worth a raised eyebrow.
+          </p>
+          <p class="pull">
+            This isn't just humor — it's philosophy with a tickle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIELD NOTES -->
+    <section class="shell section" id="field-notes">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Field notes</div>
+          <h2>No absurdity<br>is safe.</h2>
+        </div>
+        <p>A magnifying glass held up to the laughable laws of society — plus the occasional love letter to nonsense.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="tag"><span>Note 01 · Nature</span><span class="glyph" aria-hidden="true">✳</span></div>
+          <h3>The bureaucracy of bananas</h3>
+          <p>A fruit that arrives pre-wrapped by nature, yet somewhere a form is missing a stamp. The most self-sufficient snack alive, defeated by paperwork.</p>
+        </article>
+
+        <article class="card">
+          <div class="tag"><span>Note 02 · Weather</span><span class="glyph" aria-hidden="true">✳</span></div>
+          <h3>Emotional weather reports</h3>
+          <p>Today: 80% chance of overthinking, clearing by late afternoon. Tomorrow: scattered clarity with a strong chance of unsolicited advice.</p>
+        </article>
+
+        <article class="card">
+          <div class="tag"><span>Note 03 · Laundry</span><span class="glyph" aria-hidden="true">✳</span></div>
+          <h3>The existential crisis of a sock</h3>
+          <p>Left behind. Literally. A meditation on purpose, pairing, and the vast, lint-filled void beneath the bed.</p>
+        </article>
+
+        <article class="card">
+          <div class="tag"><span>Note 04 · Society</span><span class="glyph" aria-hidden="true">✳</span></div>
+          <h3>The philosophy of queues</h3>
+          <p>We stand in line to prove patience is a virtue we'd rather not practice. Behind us, someone is already sighing.</p>
+        </article>
+
+        <article class="card">
+          <div class="tag"><span>Note 05 · Language</span><span class="glyph" aria-hidden="true">✳</span></div>
+          <h3>Small talk, big questions</h3>
+          <p>"How are you?" "Fine." Two words, zero information, one sacred social contract we all sign without reading.</p>
+        </article>
+
+        <article class="card">
+          <div class="tag"><span>Note 06 · Public service</span><span class="glyph" aria-hidden="true">✳</span></div>
+          <h3>Advice, unsolicited</h3>
+          <p>Free of charge and worth every penny. Delivered with a wink, a footnote, and absolutely no follow-up questions.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="shell section" id="manifesto">
+      <div class="manifesto">
+        <div class="manifesto-intro">
+          <div class="eyebrow">The tiny manifesto</div>
+          <h2>A few things I try to remember.</h2>
+          <p>Not commandments. More like friendly notes left for a mind that has a habit of wandering off with the scissors.</p>
+        </div>
+
+        <ol class="principles">
+          <li class="principle">
+            <span class="num" aria-hidden="true">01</span>
+            <div>
+              <h3>Curiosity over certainty.</h3>
+              <p>Being willing to ask is usually more useful than pretending to know. The question mark remains the most honest punctuation.</p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="num" aria-hidden="true">02</span>
+            <div>
+              <h3>Nothing is too sacred to be tickled.</h3>
+              <p>Satire isn't cruelty; it's a magnifying glass with a sense of humor. Seriousness can take a well-deserved timeout.</p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="num" aria-hidden="true">03</span>
+            <div>
+              <h3>Laugh at the absurdity, not the person.</h3>
+              <p>The world supplies plenty of material. Kindness is what keeps the punchline in the right place.</p>
+            </div>
+          </li>
+          <li class="principle">
+            <span class="num" aria-hidden="true">04</span>
+            <div>
+              <h3>Stay free enough to change your mind.</h3>
+              <p>Unconventional isn't a uniform. It's permission to think for yourself — even when the answer turns out to be surprisingly ordinary.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- QUOTE BAND -->
+    <section class="quote-band">
+      <div class="shell">
+        <blockquote>
+          “If life is a joke, we might as well be the ones<br>
+          writing <em>the best one-liners.</em>”
+        </blockquote>
+        <cite>Wisefool (Kay Yes) · retired, rewired &amp; absurdly inspired</cite>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="shell section" id="hello">
+      <div class="cta-panel">
+        <div>
+          <div class="eyebrow">Join the circus</div>
+          <h2>Come along — the celebration of the ridiculous is just getting started.</h2>
+          <p>One punchline at a time. No briefcases allowed.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="button" href="mailto:pkshenoy@gmail.com">Say hello <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#top">Back to the top</a>
+        </div>
+      </div>
+
+      <footer>
+        <span>© Wisefool (Kay Yes) · a work in curious progress</span>
+        <span>Made of questions, not conclusions.</span>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
